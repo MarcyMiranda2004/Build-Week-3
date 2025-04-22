@@ -1,8 +1,9 @@
 import "./App.css"
-import Competenze from "./components/Competenze"
+import Competenze from "./components/EsperienzaComponents/Competenze"
 
-import Esperienza from "./components/Esperienza"
-import Formazione from "./components/Formazione"
+import Esperienza from "./components/EsperienzaComponents/Esperienza"
+import Formazione from "./components/EsperienzaComponents/Formazione"
+import Interessi from "./components/EsperienzaComponents/Interessi"
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Esperienza />
       <Formazione />
       <Competenze />
+      <Interessi />
     </>
   )
 }
