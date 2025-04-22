@@ -1,13 +1,515 @@
 import "./App.css";
-import RightSidebar from "./components/RightSidebar";
+import Footer from "./components/Footer";
+import LinkedInNavbar from "./components/Navbar";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
     <>
-      <RightSidebar
-        language="Italiano"
-        publicUrl="https://linkedin.com/in/Marcello Miranda"
-      />
+      <div>
+        <LinkedInNavbar />
+      </div>
+      <main>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus commodi, incidunt iure ex quos veritatis debitis natus
+          inventore modi illum doloribus dolorum fugit recusandae in itaque
+          laboriosam, magni doloremque aperiam.
+        </p>
+      </main>
+      <Footer />
     </>
   );
 }
