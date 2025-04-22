@@ -8,7 +8,11 @@ interface RightSidebarProps {
 
 const RightSidebar = function ({ language, publicUrl }: RightSidebarProps) {
   return (
-    <Col md={2} className="d-none d-md-block mt-3" style={{ top: "70px" }}>
+    <Col
+      md={2}
+      className="d-none d-md-block mt-3"
+      style={{ position: "sticky", top: "80px" }}
+    >
       <Card className="mb-3 shadow-sm">
         <Card.Body className="p-3">
           <div className="d-flex justify-content-between">
