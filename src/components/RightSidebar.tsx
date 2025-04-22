@@ -1,18 +1,14 @@
-import { Card, Col } from "react-bootstrap";
-import UsersConnection from "./UsersConnection";
+import { Card, Col } from "react-bootstrap"
+import UsersConnection from "./UsersConnection"
 
 interface RightSidebarProps {
-  language: string;
-  publicUrl: string;
+  language: string
+  publicUrl: string
 }
 
 const RightSidebar = function ({ language, publicUrl }: RightSidebarProps) {
   return (
-    <Col
-      md={2}
-      className="d-none d-md-block mt-3"
-      style={{ position: "sticky", top: "80px" }}
-    >
+    <Col className="d-none d-md-block mt-3">
       <Card className="mb-3 shadow-sm">
         <Card.Body className="p-3">
           <div className="d-flex justify-content-between">
@@ -40,7 +36,7 @@ const RightSidebar = function ({ language, publicUrl }: RightSidebarProps) {
 
       <UsersConnection />
     </Col>
-  );
-};
+  )
+}
 
-export default RightSidebar;
+export default RightSidebar

@@ -28,7 +28,10 @@ const Interessi = function () {
                     <Col xs="10">
                       <p>Apple inc.</p>
                       <p>156.549.000 followers</p>
-                      <Button className=" border border-2 border-black rounded-3 mb-3  btn-outline-dark  ">
+                      <Button
+                        className=" border border-black mb-3"
+                        variant=" outline-dark"
+                      >
                         ✔️ Già segui
                       </Button>
                     </Col>
@@ -46,7 +49,10 @@ const Interessi = function () {
                     <Col xs="10">
                       <p>Microsoft</p>
                       <p>6.549.000 followers</p>
-                      <Button className=" border border-2 border-black rounded-3 mb-3  btn-outline-dark ">
+                      <Button
+                        className=" border border-black mb-3"
+                        variant=" outline-dark"
+                      >
                         ✔️ Già segui
                       </Button>
                     </Col>
@@ -70,7 +76,10 @@ const Interessi = function () {
                     <Col xs="10">
                       <p>Epicode</p>
                       <p>549.000 followers</p>
-                      <Button className=" border border-2 border-black rounded-3 mb-3  btn-outline-dark  ">
+                      <Button
+                        className=" border border-black mb-3"
+                        variant=" outline-dark"
+                      >
                         ✔️ Già segui
                       </Button>
                     </Col>
@@ -88,7 +97,10 @@ const Interessi = function () {
                     <Col xs="10">
                       <p>Oxford University</p>
                       <p>12.000 followers</p>
-                      <Button className=" border border-2 border-black rounded-3 mb-3   btn-outline-dark">
+                      <Button
+                        className=" border border-black mb-3"
+                        variant=" outline-dark"
+                      >
                         ✔️ Già segui
                       </Button>
                     </Col>

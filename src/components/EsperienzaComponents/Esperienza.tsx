@@ -81,11 +81,11 @@ const Esperienza = () => {
           <h4 className="ms-2 mt-3">Esperienza</h4>
         </Col>
         <Col xs="auto" className="d-flex align-items-center gap-2">
-          <Button variant="primary" onClick={() => setShow(true)}>
+          <Button variant="outline-black " onClick={() => setShow(true)}>
             <span className="fs-5">+</span>
           </Button>
           <Button
-            variant={isEditMode ? "outline-secondary" : "outline-primary"}
+            variant={isEditMode ? "outline-secondary" : "outline-black"}
             onClick={() => setIsEditMode((prev) => !prev)}
           >
             {isEditMode ? "Annulla" : <i className="bi bi-pencil"></i>}

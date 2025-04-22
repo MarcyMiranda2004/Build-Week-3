@@ -68,10 +68,13 @@ const Formazione = () => {
           <h4 className="ms-2 mt-3">Formazione</h4>
         </Col>
         <Col xs="auto" className="d-flex gap-2">
-          <Button variant="primary" onClick={() => handleShow()}>
+          <Button variant="outline-black" onClick={() => handleShow()}>
             <span className="fs-5">+</span>
           </Button>
-          <Button variant="secondary" onClick={() => setEditMode(!editMode)}>
+          <Button
+            variant="outline-black"
+            onClick={() => setEditMode(!editMode)}
+          >
             {editMode ? "Fine modifica" : <i className="bi bi-pencil"></i>}
           </Button>
         </Col>

@@ -52,11 +52,11 @@ const Competenze = () => {
           <h4 className="ms-2 mt-3">Competenze</h4>
         </Col>
         <Col xs="auto">
-          <Button variant="primary" onClick={handleShow}>
+          <Button variant="outline-black" onClick={handleShow}>
             <span className="fs-5">+</span>
           </Button>{" "}
           <Button
-            variant="outline-secondary"
+            variant="outline-black"
             className="me-2"
             onClick={() => setEditMode((prev) => !prev)}
           >
