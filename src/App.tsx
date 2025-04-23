@@ -22,18 +22,17 @@ function App() {
       <main>
         <Container>
           <Row className="justify-content-center">
-            <Col xs="9">
-            <InformationUser/>
+            <Col xs={12} md={9}>
+              <InformationUser />
               <Consigliati />
               <Analisi />
               <Attività />
-
               <Esperienza />
               <Formazione />
               <Competenze />
               <Interessi />
             </Col>
-            <Col xs="3">
+            <Col xs={3} className="d-none d-md-block">
               <RightSidebar
                 language="Italiano"
                 publicUrl="https://linkedin.com/in/Marcello Miranda"
