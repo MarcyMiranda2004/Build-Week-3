@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../style/user.css";
 import { Pencil, ShieldCheck } from "react-bootstrap-icons";
 import { Button, Container } from "react-bootstrap";
+import ModalUser from "../components/ModalUser";
 
 interface Profile {
   name: string;
@@ -22,6 +23,8 @@ interface Profile {
 
 function InformationUser() {
   const [profile, setProfile] = useState<Profile | null>(null);
+  const [isModalOpen, setModalOpen] = useState(false);
+  
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -48,13 +51,21 @@ function InformationUser() {
     return <div>Loading...</div>;
   }
 
+ const handleOpenModal = () => {
+  setModalOpen(true);
+ }
+
+ const handleCloseModal = () => {
+  setModalOpen(false);
+ }
+
   return (
-    <Container className="bg-white d-flex justify-content-center align-items-center rounded-3 border border-1 border-lk-light mt-2 p-0">
-      <div className="profile-card p-0 bg-white">
+    <Container className="bg-white d-flex justify-content-center align-items-center rounded-5  border border-1 border-lk-light mt-3 p-0">
+      <div className="profile-card rounded-3 p-0 bg-white">
         <div className="header-section position-relative mb-3">
           <img src={profile.image} className="cover-img w-100 rounded-top" />
           <div className="d-flex justify-content-end">
-            <Button className="d-flex mt-3 justify-content-end me-3 fs-5 rounded-circle border-0 Pen bg-transparent">
+            <Button className="d-flex mt-3 justify-content-end me-3 fs-5 rounded-circle border-0 Pen bg-transparent" onClick={handleOpenModal}>
               <Pencil size={20} className="text-lk-tertiary" />
             </Button>
           </div>
@@ -140,6 +151,7 @@ function InformationUser() {
           </div>
         </div>
       </div>
+      <ModalUser isOpen={isModalOpen} onClose={handleCloseModal} />
     </Container>
   );
 }
