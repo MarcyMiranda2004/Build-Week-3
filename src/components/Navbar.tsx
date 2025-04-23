@@ -100,7 +100,10 @@ const LinkedInNavbar: React.FC = () => {
                   Ricerche recenti
                 </div>
                 {recentSearches.map((item, index) => (
-                  <div key={index} className="px-3 py-2 hover-bg">
+                  <div
+                    key={index}
+                    className="px-3 py-2 hover-bg cronologia cursor-pointer"
+                  >
                     <Search size={12} /> {item}
                   </div>
                 ))}
