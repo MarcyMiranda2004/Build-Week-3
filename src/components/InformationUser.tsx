@@ -1,24 +1,66 @@
+import React, { useEffect, useState } from 'react';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../style/user.css";
 import { Pencil, ShieldCheck } from "react-bootstrap-icons";
 import { Button, Container } from "react-bootstrap";
 
+interface Profile {
+  name: string;
+  surname: string;
+  email: string;
+  username: string;
+  bio: string;
+  title: string;
+  area: string;
+  image: string;
+  createdAt: string;
+  updatedAt: string;
+  __v: number;
+  _id: string;
+}
+
 function InformationUser() {
+  const [profile, setProfile] = useState<Profile | null>(null);
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        const response = await fetch("https://striveschool-api.herokuapp.com/api/profile/me", {
+          headers: {
+            Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODA3OGYwOWQ0NTE4MTAwMTVjZTgzZTMiLCJpYXQiOjE3NDUzMjU4MzMsImV4cCI6MTc0NjUzNTQzM30.uJOPPtgp8vvr1Y0R65E9hilZ2E0fEm22LZsvbmsnZPM",
+          },
+        });
+        if (response.ok) {
+          const data = await response.json();
+          setProfile(data);
+        } else {
+          console.error("Failed to fetch profile");
+        }
+      } catch (error) {
+        console.error("Error fetching profile:", error);
+      }
+    };
+    fetchProfile();
+  }, []);
+
+  if (!profile) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <Container className="bg-white d-flex justify-content-center align-items-center rounded-3 border border-1 border-lk-light mt-2 p-0">
       <div className="profile-card p-0 bg-white">
         <div className="header-section position-relative mb-3">
-          <img src="./public/IMG.JPG" className="cover-img w-100 rounded-top" />
+          <img src={profile.image} className="cover-img w-100 rounded-top" />
           <div className="d-flex justify-content-end">
             <Button className="d-flex mt-3 justify-content-end me-3 fs-5 rounded-circle border-0 Pen bg-transparent">
-              <Pencil size={20} className="text-lk-tertiary"  />
+              <Pencil size={20} className="text-lk-tertiary" />
             </Button>
           </div>
-
           <div className="profile-img-wrapper position-absolute">
             <img
-              src="./public/IMG.JPG"
+              src={profile.image}
               alt="Profile"
               className="profile-img rounded-circle border border-4 border-white"
             />
@@ -27,9 +69,9 @@ function InformationUser() {
         <div>
           <div className="d-flex  justify-content-between ">
             <h2 className="ms-3 mb-0 name mt-0">
-              Marcello Miranda <ShieldCheck size={20} />
+              {profile.name} {profile.surname} <ShieldCheck size={20} />
             </h2>
-            <a className="  epicode first border-0 mt-3 me-5  d-flex d-none d-md-flex text-decoration-none text-black fw-semibold">
+            <a className=" epicode first border-0 mt-3 me-5  d-flex d-none d-md-flex text-decoration-none text-black fw-semibold">
               <img
                 src="./public/epicode_logo.jpeg"
                 alt="Epicode Logo"
@@ -50,7 +92,7 @@ function InformationUser() {
             EPICODE
           </a>
           <p className="ms-3 mb-1 text-lk-tertiary">
-            Terzigno, Campania, Italia ·
+            {profile.area}, Italia ·
             <a
               className="text-decoration-none fw-semibold text-lk-primary"
               href="#"
@@ -71,15 +113,12 @@ function InformationUser() {
           <Button className="btn bg-lk-primary disponibile rounded-5 text-light">
             Disponibile per
           </Button>
-
           <Button className="btn btn-outline-lk-primary border-1 rounded-5 border-lk-primary otherButton bg-transparent text-lk-primary fw-semibold">
             Aggiungi sezione del profilo
           </Button>
-
           <Button className="btn btn-outline-lk-secondary border-1 rounded-5 border-lk-primary otherButton bg-transparent text-lk-primary fw-semibold">
             Migliora profilo
           </Button>
-
           <Button className="btn btn-light border-1 border-black rounded-5 risorse bg-transparent">
             Risorse
           </Button>
