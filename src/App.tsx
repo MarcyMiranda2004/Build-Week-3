@@ -32,7 +32,7 @@ function App() {
               <Competenze />
               <Interessi />
             </Col>
-            <Col xs={3} className="d-none d-md-block">
+            <Col xs={3} className="d-none d-lg-block">
               <RightSidebar
                 language="Italiano"
                 publicUrl="https://linkedin.com/in/Marcello Miranda"

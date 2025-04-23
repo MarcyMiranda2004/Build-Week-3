@@ -1,52 +1,52 @@
-import { Col, Container, Row, Button } from "react-bootstrap"
-import { useState } from "react"
-import TitoloModal from "./TitoloModal"
-import "bootstrap-icons/font/bootstrap-icons.css"
+import { Col, Container, Row, Button } from "react-bootstrap";
+import { useState } from "react";
+import TitoloModal from "./TitoloModal";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 export type TitoloItem = {
-  nome: string
-  ente: string
-}
+  nome: string;
+  ente: string;
+};
 
 const Competenze = () => {
-  const [show, setShow] = useState(false)
-  const [editMode, setEditMode] = useState(false)
-  const [editingIndex, setEditingIndex] = useState<number | null>(null)
-  const [titoli, setTitoli] = useState<TitoloItem[]>([])
-  const [formData, setFormData] = useState<TitoloItem>({ nome: "", ente: "" })
+  const [show, setShow] = useState(false);
+  const [editMode, setEditMode] = useState(false);
+  const [editingIndex, setEditingIndex] = useState<number | null>(null);
+  const [titoli, setTitoli] = useState<TitoloItem[]>([]);
+  const [formData, setFormData] = useState<TitoloItem>({ nome: "", ente: "" });
 
   const handleShow = () => {
-    setEditingIndex(null)
-    setShow(true)
-  }
+    setEditingIndex(null);
+    setShow(true);
+  };
 
   const handleChange = (e: React.ChangeEvent<any>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+    e.preventDefault();
     if (editingIndex !== null) {
-      const updated = [...titoli]
-      updated[editingIndex] = formData
-      setTitoli(updated)
+      const updated = [...titoli];
+      updated[editingIndex] = formData;
+      setTitoli(updated);
     } else {
-      setTitoli((prev) => [...prev, formData])
+      setTitoli((prev) => [...prev, formData]);
     }
-    setFormData({ nome: "", ente: "" })
-    setEditingIndex(null)
-    setShow(false)
-  }
+    setFormData({ nome: "", ente: "" });
+    setEditingIndex(null);
+    setShow(false);
+  };
 
   const handleEdit = (index: number) => {
-    setFormData(titoli[index])
-    setEditingIndex(index)
-    setShow(true)
-  }
+    setFormData(titoli[index]);
+    setEditingIndex(index);
+    setShow(true);
+  };
 
   return (
-    <Container className="bg-white border rounded-3 mt-4">
+    <Container className="bg-white border rounded-3 my-1">
       <Row className="align-items-center mb-3">
         <Col>
           <h4 className="ms-2 mt-3">Competenze</h4>
@@ -104,15 +104,15 @@ const Competenze = () => {
       <TitoloModal
         show={show}
         onHide={() => {
-          setShow(false)
-          setEditingIndex(null)
+          setShow(false);
+          setEditingIndex(null);
         }}
         formData={formData}
         onChange={handleChange}
         onSubmit={handleSubmit}
       />
     </Container>
-  )
-}
+  );
+};
 
-export default Competenze
+export default Competenze;
