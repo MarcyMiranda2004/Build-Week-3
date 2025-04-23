@@ -11,8 +11,8 @@ function InformationUser() {
         <div className="header-section position-relative mb-3">
           <img src="./public/IMG.JPG" className="cover-img w-100 rounded-top" />
           <div className="d-flex justify-content-end">
-            <Button className="d-flex mt-3 justify-content-end me-3 fs-5  pen rounded-circle bg-transparent border-0">
-              <Pencil size={20} className="text-lk-tertiary" />
+            <Button className="d-flex mt-3 justify-content-end me-3 fs-5 rounded-circle border-0 Pen bg-transparent">
+              <Pencil size={20} className="text-lk-tertiary"  />
             </Button>
           </div>
 
@@ -29,7 +29,7 @@ function InformationUser() {
             <h2 className="ms-3 mb-0 name mt-0">
               Marcello Miranda <ShieldCheck size={20} />
             </h2>
-            <a className=" first border-0 mt-3 bg-transparent me-5  d-flex d-none d-sm-flex text-decoration-none text-black fw-semibold">
+            <a className="  epicode first border-0 mt-3 me-5  d-flex d-none d-md-flex text-decoration-none text-black fw-semibold">
               <img
                 src="./public/epicode_logo.jpeg"
                 alt="Epicode Logo"
@@ -40,7 +40,7 @@ function InformationUser() {
             </a>
           </div>
           <p className="ms-3 mb-1">Studente presso I.S Graziani</p>
-          <button className="border-0 me-5 ms-3 mt-2 mb-2 bg-transparent d-flex align-items-center d-sm-none">
+          <a className=" epicode border-0 me-5 ms-3 mt-2 mb-2s d-flex text-decoration-none text-black align-items-center d-md-none">
             <img
               src="./public/epicode_logo.jpeg"
               alt="Epicode Logo"
@@ -48,7 +48,7 @@ function InformationUser() {
               style={{ width: "20px", height: "20px" }}
             />
             EPICODE
-          </button>
+          </a>
           <p className="ms-3 mb-1 text-lk-tertiary">
             Terzigno, Campania, Italia ·
             <a
@@ -67,7 +67,7 @@ function InformationUser() {
             </a>
           </p>
         </div>
-        <div className="d-flex flex-wrap ms-3  gap-3 mt-2">
+        <div className="d-flex flex-wrap ms-3 gap-3 mt-2">
           <Button className="btn bg-lk-primary disponibile rounded-5 text-light">
             Disponibile per
           </Button>
