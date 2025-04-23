@@ -62,7 +62,7 @@ const Formazione = () => {
   };
 
   return (
-    <Container className="bg-white border rounded-3">
+    <Container className="bg-white border rounded-3 my-2">
       <Row className="align-items-center mb-1">
         <Col>
           <h4 className="ms-2 mt-3">Formazione</h4>
