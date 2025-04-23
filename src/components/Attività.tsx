@@ -103,7 +103,7 @@ const Attività = () => {
         </div>
 
         <a className="text-decoration-none text-lk-tertiary d-flex justify-content-center align-items-center border-top border-1 border-lk-light mt-2 p-2 showAnalisi">
-          <span className="fw-semibold me-2">Mostra tutte le analisi </span>
+          <span className="fw-semibold me-2">Mostra tutte le attività </span>
           <ArrowRight className="text-lk-tertiary" size={16} />
         </a>
       </Container>
