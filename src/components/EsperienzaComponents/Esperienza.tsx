@@ -1,13 +1,14 @@
-import { Col, Container, Row, Button } from "react-bootstrap"
-import { useState } from "react"
-import EsperienzaModal from "./EsperienzaModal"
-import "bootstrap-icons/font/bootstrap-icons.css"
+import { Col, Container, Row, Button } from "react-bootstrap";
+import { useState } from "react";
+import EsperienzaModal from "./EsperienzaModal";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 const Esperienza = () => {
-  const [show, setShow] = useState(false)
-  const [esperienze, setEsperienze] = useState<any[]>([])
-  const [isEditMode, setIsEditMode] = useState(false)
-  const [editingIndex, setEditingIndex] = useState<number | null>(null)
+  const [show, setShow] = useState(false);
+  const [esperienze, setEsperienze] = useState<any[]>([]);
+  const [isEditMode, setIsEditMode] = useState(false);
+  const [editingIndex, setEditingIndex] = useState<number | null>(null);
+
   const [formData, setFormData] = useState({
     qualifica: "",
     tipoImpiego: "",
@@ -18,23 +19,23 @@ const Esperienza = () => {
     dataFineMese: "",
     dataFineAnno: "",
     descrizione: "",
-  })
+  });
 
   const handleChange = (e: React.ChangeEvent<any>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+    e.preventDefault();
     if (editingIndex !== null) {
       // Modifica
-      const nuoveEsperienze = [...esperienze]
-      nuoveEsperienze[editingIndex] = formData
-      setEsperienze(nuoveEsperienze)
+      const nuoveEsperienze = [...esperienze];
+      nuoveEsperienze[editingIndex] = formData;
+      setEsperienze(nuoveEsperienze);
     } else {
       // Aggiunta
-      setEsperienze((prev) => [...prev, formData])
+      setEsperienze((prev) => [...prev, formData]);
     }
 
     setFormData({
@@ -47,20 +48,21 @@ const Esperienza = () => {
       dataFineMese: "",
       dataFineAnno: "",
       descrizione: "",
-    })
-    setEditingIndex(null)
-    setShow(false)
-  }
+    });
+
+    setEditingIndex(null);
+    setShow(false);
+  };
 
   const handleEdit = (index: number) => {
-    setFormData(esperienze[index])
-    setEditingIndex(index)
-    setShow(true)
-  }
+    setFormData(esperienze[index]);
+    setEditingIndex(index);
+    setShow(true);
+  };
 
   const handleCloseModal = () => {
-    setShow(false)
-    setEditingIndex(null)
+    setShow(false);
+    setEditingIndex(null);
     setFormData({
       qualifica: "",
       tipoImpiego: "",
@@ -71,11 +73,11 @@ const Esperienza = () => {
       dataFineMese: "",
       dataFineAnno: "",
       descrizione: "",
-    })
-  }
+    });
+  };
 
   return (
-    <Container className="bg-white border rounded-3 my-3">
+    <Container className="bg-white border rounded-3 my-2">
       <Row className="align-items-center mb-3">
         <Col>
           <h4 className="ms-2 mt-3">Esperienza</h4>
@@ -171,7 +173,7 @@ const Esperienza = () => {
         onSubmit={handleSubmit}
       />
     </Container>
-  )
-}
+  );
+};
 
-export default Esperienza
+export default Esperienza;
