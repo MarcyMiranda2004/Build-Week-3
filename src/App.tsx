@@ -11,6 +11,7 @@ import Interessi from "./components/EsperienzaComponents/Interessi";
 import Consigliati from "./components/Consigliati";
 import Analisi from "./components/Analisi";
 import Attività from "./components/Attività";
+import InformationUser from "./components/InformationUser";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Container>
           <Row className="justify-content-center">
             <Col xs="9">
+            <InformationUser/>
               <Consigliati />
               <Analisi />
               <Attività />

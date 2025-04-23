@@ -1,13 +1,13 @@
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../style/user.css";
-import { Pencil, PencilFill } from 'react-bootstrap-icons';
+import {  PencilFill } from 'react-bootstrap-icons';
 import { Button } from "react-bootstrap";
 
 
 function InformationUser() {
     return (
-        <div className="profile-container d-flex justify-content-center align-items-center vh-100">
+        <div className="profile-container d-flex justify-content-center align-items-center vh-80 mt-3">
             <div className="profile-card shadow p-0 bg-white">
                 <div className="header-section position-relative mb-3">
                     <img
@@ -15,7 +15,7 @@ function InformationUser() {
                         className="cover-img w-100 rounded-top"
                     />
                     <div className="d-flex justify-content-end">
-                 <Button className="d-flex mt-3 justify-content-end me-3 fs-5  pen rounded-circle ">
+                 <Button className="d-flex mt-3 justify-content-end me-3 fs-5 border-0 text-black pen rounded-circle  bg-light">
                     <PencilFill />
                  </Button>
                  </div>
@@ -31,13 +31,13 @@ function InformationUser() {
                 <div>
                     <div className="d-flex  justify-content-between ">
                         <h2 className="ms-3 mb-0 name mt-0">Marcello Miranda</h2>
-                        <button className=" firstb border-0 mt-3 bg-transparent me-5  d-flex d-none d-sm-flex ">
+                        <button className=" firstb border-0 mt-3 bg-transparent me-5  d-flex d-none d-md-flex ">
                             <img src="./public/epicode_logo.jpeg" alt="Epicode Logo" className="me-2" style={{ width: '20px', height: '20px' }} />
                             EPICODE
                         </button>
                     </div>
                     <p className="ms-3 mb-1">Studente presso I.S Graziani</p>
-                    <button className="border-0 me-5 ms-3 mt-2 mb-2 bg-transparent d-flex align-items-center d-sm-none">
+                    <button className="border-0 me-5 ms-3 mt-2 mb-2 bg-transparent d-flex align-items-center d-md-none">
                         <img src="./public/epicode_logo.jpeg" alt="Epicode Logo" className="me-2" style={{ width: '20px', height: '20px' }} />
                         EPICODE
                     </button>
