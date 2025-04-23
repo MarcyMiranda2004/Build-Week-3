@@ -80,14 +80,14 @@ const Attività = () => {
       </Modal>
 
       {/* Main del componente */}
-      <Container className="border border-1 rounded-3 border-lk-light mt-2 bg-lk-secondary w-75 p-0">
+      <Container className="border border-1 rounded-3 border-lk-light mt-2 mb-1 bg-lk-secondary p-0">
         <div className="p-4 pb-0">
           <div className="d-flex justify-content-between">
             <h4 className="lh-1">Attività</h4>
 
             <div>
               <Button
-                className="border border-1 border-lk-primary p-1 px-3 rounded-pill text-lk-primary fw-semibold me-3 addPost"
+                className="border border-1 border-primary p-1 px-3 rounded-pill text-lk-primary fw-semibold me-3 addPost bg-transparent"
                 onClick={handleShow}
               >
                 Crea un Post

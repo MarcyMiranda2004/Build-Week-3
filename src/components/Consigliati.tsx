@@ -50,7 +50,7 @@ const Consigliati = () => {
       </Modal>
 
       {/* Main del componente */}
-      <Container className="border border-1 rounded-3 border-lk-light p-4 mt-2 bg-lk-secondary w-75">
+      <Container className="border border-1 rounded-3 border-lk-light p-4 mt-2 bg-lk-secondary">
         <div>
           <h4 className=" m-0">Consigliati per te</h4>
 
@@ -76,7 +76,7 @@ const Consigliati = () => {
           </p>
 
           <Button
-            className="bg-transparent rounded-pill border border-1 border-black fw-semibold addRiepilogo"
+            className="bg-transparent rounded-pill border border-1 border-black fw-semibold addRiepilogo text-lk-tertiary"
             onClick={handleShow}
           >
             Aggiungi un Riepilogo

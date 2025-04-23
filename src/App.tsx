@@ -13,7 +13,36 @@ import Analisi from "./components/Analisi";
 import Attività from "./components/Attività";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <div className="sticky-top">
+        <LinkedInNavbar />
+      </div>
+      <main>
+        <Container>
+          <Row className="justify-content-center">
+            <Col xs="9">
+              <Consigliati />
+              <Analisi />
+              <Attività />
+
+              <Esperienza />
+              <Formazione />
+              <Competenze />
+              <Interessi />
+            </Col>
+            <Col xs="3">
+              <RightSidebar
+                language="Italiano"
+                publicUrl="https://linkedin.com/in/Marcello Miranda"
+              />
+            </Col>
+          </Row>
+        </Container>
+      </main>
+      <Footer />
+    </>
+  );
 }
 
 export default App;

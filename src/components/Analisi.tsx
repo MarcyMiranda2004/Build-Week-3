@@ -9,7 +9,7 @@ import {
 
 const Analisi = () => {
   return (
-    <Container className="border border-1 rounded-3 border-lk-light mt-2 bg-lk-secondary w-75 p-0">
+    <Container className="border border-1 rounded-3 border-lk-light mt-2 bg-lk-secondary p-0">
       <div className="p-4">
         <h4 className=" m-0">Analisi</h4>
 

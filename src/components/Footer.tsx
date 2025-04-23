@@ -1,14 +1,10 @@
-import React from 'react';
-import { Container, Row, Col, Form } from 'react-bootstrap';
-import {
-  QuestionCircle,
-  GearFill,
-  InfoCircle,
-} from 'react-bootstrap-icons';
+import React from "react";
+import { Container, Row, Col, Form } from "react-bootstrap";
+import { QuestionCircle, GearFill, InfoCircle } from "react-bootstrap-icons";
 
 const FooterLinkedIn: React.FC = () => {
   return (
-    <footer className="bg-light py-4 px-3">
+    <footer className="bg-transparent py-4 px-3">
       <Container fluid="lg">
         <Row xs={1} md={2} lg={5}>
           <Col>
@@ -18,17 +14,19 @@ const FooterLinkedIn: React.FC = () => {
               <p className="mb-1">Privacy e condizioni ▾</p>
               <p className="mb-1">Sales Solutions</p>
               <p className="mb-1">Centro sicurezza</p>
-              <p className="mt-3 mb-0"> TEAM6 for Epicode &copy; 2025 -LinkedIn Clone </p>
-              </div>
+              <p className="mt-3 mb-0">
+                TEAM6 for Epicode &copy; 2025 -LinkedIn Clone
+              </p>
+            </div>
           </Col>
-         <Col>
-         <div className="small d-flex flex-column gap-1">
+          <Col>
+            <div className="small d-flex flex-column gap-1">
               <p className="fw-bold mt-1 mb-1">Accessibilità</p>
               <p className="mb-1">Carriera</p>
               <p className="mb-1">Opzioni per gli annunci pubblicitari</p>
               <p className="mb-1">Mobile</p>
             </div>
-            </Col>
+          </Col>
           <Col>
             <div className="small d-flex flex-column gap-1">
               <p className="fw-bold mb-1">Talent Solutions</p>
@@ -42,21 +40,27 @@ const FooterLinkedIn: React.FC = () => {
             <div className="small d-flex flex-column gap-2">
               <div className="d-flex align-items-start gap-2">
                 <div>
-                  <strong><QuestionCircle /> Domande?</strong>
+                  <strong>
+                    <QuestionCircle /> Domande?
+                  </strong>
                   <div>Visita il nostro Centro assistenza.</div>
                 </div>
               </div>
 
               <div className="d-flex align-items-start gap-2">
                 <div>
-                  <strong><GearFill /> Gestisci il tuo account e la tua privacy</strong>
+                  <strong>
+                    <GearFill /> Gestisci il tuo account e la tua privacy
+                  </strong>
                   <div>Vai alle impostazioni</div>
                 </div>
               </div>
 
               <div className="d-flex align-items-start gap-2">
                 <div>
-                  <strong><InfoCircle /> Trasparenza sui contenuti consigliati</strong>
+                  <strong>
+                    <InfoCircle /> Trasparenza sui contenuti consigliati
+                  </strong>
                   <div>Scopri di più sui contenuti consigliati.</div>
                 </div>
               </div>
