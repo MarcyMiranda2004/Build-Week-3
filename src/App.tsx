@@ -14,11 +14,15 @@ import "./App.css";
 import Consigliati from "./components/Consigliati";
 import Analisi from "./components/Analisi";
 import Attività from "./components/Attività";
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 function App() {
   return (
     <>
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
       <div className=" sticky-top">
         <LinkedInNavbar />
@@ -45,11 +49,16 @@ function App() {
     </>
   )
 =======
+=======
+>>>>>>> Stashed changes
       <Consigliati />
       <Analisi />
       <Attività />
     </>
   );
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }
 
