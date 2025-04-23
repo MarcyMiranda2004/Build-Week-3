@@ -15,7 +15,7 @@
 }
 
 .addPost:hover {
-  background-color: rgba(93, 214, 235, 0.286);
+  background-color: rgba(93, 214, 235, 0.286) !important;
   border: 2px solid rgb(0, 0, 120) !important;
 }
 

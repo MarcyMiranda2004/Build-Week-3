@@ -11,6 +11,7 @@ import Interessi from "./components/EsperienzaComponents/Interessi";
 import Consigliati from "./components/Consigliati";
 import Analisi from "./components/Analisi";
 import Attività from "./components/Attività";
+import InformationUser from "./components/InformationUser";
 
 function App() {
   return (
@@ -21,17 +22,17 @@ function App() {
       <main>
         <Container>
           <Row className="justify-content-center">
-            <Col xs="9">
+            <Col xs={12} md={9}>
+              <InformationUser />
               <Consigliati />
               <Analisi />
               <Attività />
-
               <Esperienza />
               <Formazione />
               <Competenze />
               <Interessi />
             </Col>
-            <Col xs="3">
+            <Col xs={3} className="d-none d-md-block">
               <RightSidebar
                 language="Italiano"
                 publicUrl="https://linkedin.com/in/Marcello Miranda"

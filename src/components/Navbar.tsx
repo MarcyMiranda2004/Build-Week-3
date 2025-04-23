@@ -18,114 +18,119 @@ import {
 } from "react-bootstrap-icons"
 
 const LinkedInNavbar: React.FC = () => {
-  const [isScolled, setIsScrolled] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
 
-  const hanldeScroll = () => {
-    if (window.scrollY > 1) {
-      setIsScrolled(true)
-    } else {
-      setIsScrolled(false)
-    }
+  const handleScroll = () => {
+    setIsScrolled(window.scrollY > 1)
   }
 
   useEffect(() => {
-    window.addEventListener("scroll", hanldeScroll)
-    return () => {
-      window.removeEventListener("scroll", hanldeScroll)
-    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   return (
     <Navbar
       bg="white"
-      className={`navbar ${isScolled ? "navbar-sctrolled" : ""}`}
+      expand="md"
+      className={`navbar ${isScrolled ? "navbar-scrolled" : ""}`}
+      fixed="top"
     >
-      <Container fluid className="d-flex align-items-center ">
-        <div className="d-flex align-items-center justify-content-center flex-grow-1 gap-3 ">
+      <Container fluid>
+       
+        <div className="d-flex align-items-center flex-grow-1 gap-2">
           <Image
             src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
             width={34}
             height={34}
             alt="LinkedIn"
           />
-          <Form className="ms-2">
+          <Form className="d-none d-md-block ms-2">
             <FormControl
               type="search"
               placeholder="Cerca"
-              className="me-2 - border-radius-2"
+              className="me-2"
               style={{ width: "250px" }}
             />
           </Form>
         </div>
 
-        <Nav className="d-flex align-items-center justify-content-center flex-grow-1 gap-3">
-          <div className="text-center small">
-            <HouseDoorFill size={20} />
-            <div>Home</div>
-          </div>
-          <div className="text-center small">
-            <PeopleFill size={20} />
-            <div>Rete</div>
-          </div>
-          <div className="text-center small">
-            <BriefcaseFill size={20} />
-            <div>Lavoro</div>
-          </div>
-          <div className="text-center small">
-            <ChatDotsFill size={20} />
-            <div>Messaggistica</div>
-          </div>
-          <div className="text-center small position-relative">
-            <BellFill size={20} />
-            <div>Notifiche</div>
-          </div>
+     
+        <Navbar.Toggle aria-controls="main-navbar" />
 
-          <Dropdown align="end">
-            <Dropdown.Toggle
-              variant="link"
-              className="p-0 d-flex flex-column align-items-center text-decoration-none text-dark"
-            >
-              <Image
-                src="https://placehold.co/32x32"
-                roundedCircle
-                width={32}
-                height={32}
-                alt="Tu"
-              />
-              <div>Tu </div>
-              <div className="border-start border-2 h-100 mx-2"></div>
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item>Profilo</Dropdown.Item>
-              <Dropdown.Item>Impostazioni</Dropdown.Item>
-              <Dropdown.Divider />
-              <Dropdown.Item>Esci</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-          {/* Questa è una linea vericale, aggiunta così un pò a caso :D*/}
-          <div
-            style={{
-              height: "24px",
-              width: "2px",
-              backgroundColor: "#ccc",
-              alignSelf: "center",
-            }}
-          ></div>
+        <Navbar.Collapse id="main-navbar" className="justify-content-end">
+          <Nav className="d-flex align-items-center gap-3">
+            <div className="text-center small">
+              <HouseDoorFill size={20} />
+              <div className=" d-md-block">Home</div>
+            </div>
+            <div className="text-center small">
+              <PeopleFill size={20} />
+              <div className=" d-md-block">Rete</div>
+            </div>
+            <div className="text-center small">
+              <BriefcaseFill size={20} />
+              <div className=" d-md-block">Lavoro</div>
+            </div>
+            <div className="text-center small">
+              <ChatDotsFill size={20} />
+              <div className=" d-md-block">Messaggi</div>
+            </div>
+            <div className="text-center small position-relative">
+              <BellFill size={20} />
+              <div className=" d-md-block">Notifiche</div>
+            </div>
+            
+      
+            <Dropdown align="end">
+              <Dropdown.Toggle
+                variant="link"
+                className="p-0 d-flex flex-column align-items-center text-decoration-none text-dark"
+              >
+                <Image
+                  src="https://placehold.co/32x32"
+                  roundedCircle
+                  width={32}
+                  height={32}
+                  alt="Tu"
+                />
+                <div className="d-none d-md-block">Tu</div>
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item>Profilo</Dropdown.Item>
+                <Dropdown.Item>Impostazioni</Dropdown.Item>
+                <Dropdown.Divider />
+                <Dropdown.Item>Esci</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
 
-          <Dropdown align="end">
-            <Dropdown.Toggle
-              variant="link"
-              className="p-0 d-flex flex-column align-items-center text-decoration-none text-dark"
-            >
-              <Grid3x3GapFill size={20} />
-              <div>Per le aziende </div>
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item>Talent Solutions</Dropdown.Item>
-              <Dropdown.Item>Marketing Solutions</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-        </Nav>
+            
+            <div
+              className="d-none d-md-block"
+              style={{
+                height: "24px",
+                width: "2px",
+                backgroundColor: "#ccc",
+                alignSelf: "center",
+              }}
+            ></div>
+
+           
+            <Dropdown align="end">
+              <Dropdown.Toggle
+                variant="link"
+                className="p-0 d-flex flex-column align-items-center text-decoration-none text-dark"
+              >
+                <Grid3x3GapFill size={20} />
+                <div className="d-none d-md-block">Per le aziende</div>
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item>Talent Solutions</Dropdown.Item>
+                <Dropdown.Item>Marketing Solutions</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   )
