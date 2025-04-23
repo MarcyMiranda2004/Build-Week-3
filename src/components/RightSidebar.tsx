@@ -1,15 +1,13 @@
-import { useState } from "react";
 import { Card, Col } from "react-bootstrap";
 import UsersConnection from "./UsersConnection";
-import UserClicked from "./UserClicked";
 
-interface RightSidebarProps {
-  language: string;
-  publicUrl: string;
-}
-
-const RightSidebar = function ({ language, publicUrl }: RightSidebarProps) {
-  const [userId, setUserId] = useState<string | null>(null);
+const RightSidebar = function ({
+  onUserClick,
+}: {
+  onUserClick: (userId: string) => void;
+}) {
+  const language = "Italiano";
+  const publicUrl = "https://linkedin.com/in/Marcello Miranda";
 
   return (
     <Col className="d-none d-md-block mt-3">
@@ -38,9 +36,7 @@ const RightSidebar = function ({ language, publicUrl }: RightSidebarProps) {
         </Card.Body>
       </Card>
 
-      <UsersConnection onUserClick={setUserId} />
-
-      {userId && <UserClicked userId={userId} />}
+      <UsersConnection onUserClick={onUserClick} />
     </Col>
   );
 };

@@ -12,8 +12,11 @@ import Consigliati from "./components/Consigliati";
 import Analisi from "./components/Analisi";
 import Attività from "./components/Attività";
 import InformationUser from "./components/InformationUser";
+import { useState } from "react";
+import UserClicked from "./components/UserClicked";
 
 function App() {
+  const [userId, setUserId] = useState<string | null>(null);
   return (
     <>
       <div className="sticky-top">
@@ -31,12 +34,10 @@ function App() {
               <Formazione />
               <Competenze />
               <Interessi />
+              {userId && <UserClicked userId={userId} />}
             </Col>
             <Col xs={3} className="d-none d-md-block">
-              <RightSidebar
-                language="Italiano"
-                publicUrl="https://linkedin.com/in/Marcello Miranda"
-              />
+              <RightSidebar onUserClick={setUserId} />
             </Col>
           </Row>
         </Container>
