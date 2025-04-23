@@ -33,7 +33,7 @@ const LinkedInNavbar: React.FC = () => {
     <Navbar
       bg="white"
       expand="md"
-      className={`navbar ${isScrolled ? "navbar-scrolled" : ""}`}
+      className={`navbar ${isScrolled ? "navbar-scrolled" : ""}mb-4`}
       fixed="top"
     >
       <Container fluid>
@@ -41,8 +41,8 @@ const LinkedInNavbar: React.FC = () => {
         <div className="d-flex align-items-center flex-grow-1 gap-2">
           <Image
             src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
-            width={34}
-            height={34}
+            width={30}
+            height={30}
             alt="LinkedIn"
           />
           <Form className="d-none d-md-block ms-2">
@@ -50,7 +50,7 @@ const LinkedInNavbar: React.FC = () => {
               type="search"
               placeholder="Cerca"
               className="me-2"
-              style={{ width: "250px" }}
+              style={{ width: "200px" }}
             />
           </Form>
         </div>
@@ -61,23 +61,23 @@ const LinkedInNavbar: React.FC = () => {
         <Navbar.Collapse id="main-navbar" className="justify-content-end">
           <Nav className="d-flex align-items-center gap-3">
             <div className="text-center small">
-              <HouseDoorFill size={20} />
+              <HouseDoorFill size={18} />
               <div className=" d-md-block">Home</div>
             </div>
             <div className="text-center small">
-              <PeopleFill size={20} />
+              <PeopleFill size={18} />
               <div className=" d-md-block">Rete</div>
             </div>
             <div className="text-center small">
-              <BriefcaseFill size={20} />
+              <BriefcaseFill size={18} />
               <div className=" d-md-block">Lavoro</div>
             </div>
             <div className="text-center small">
-              <ChatDotsFill size={20} />
+              <ChatDotsFill size={18} />
               <div className=" d-md-block">Messaggi</div>
             </div>
             <div className="text-center small position-relative">
-              <BellFill size={20} />
+              <BellFill size={18} />
               <div className=" d-md-block">Notifiche</div>
             </div>
             
@@ -121,7 +121,7 @@ const LinkedInNavbar: React.FC = () => {
                 variant="link"
                 className="p-0 d-flex flex-column align-items-center text-decoration-none text-dark"
               >
-                <Grid3x3GapFill size={20} />
+                <Grid3x3GapFill size={18} />
                 <div className="d-none d-md-block">Per le aziende</div>
               </Dropdown.Toggle>
               <Dropdown.Menu>
