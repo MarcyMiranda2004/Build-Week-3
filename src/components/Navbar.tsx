@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Navbar,
   Nav,
@@ -53,6 +54,9 @@ const LinkedInNavbar: React.FC = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <Navbar
@@ -62,11 +66,17 @@ const LinkedInNavbar: React.FC = () => {
         isScrolled ? "navbar-scrolled" : ""
       } p-0 py-sm-2 pt-lg-0`}
       sticky="top"
+      className={`navbar ${
+        isScrolled ? "navbar-scrolled" : ""
+      } p-0 py-sm-2 pt-lg-0`}
+      sticky="top"
     >
       <Container className="d-flex">
         <div className="d-flex gap-2 position-relative">
           <Image
             src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+            width={35}
+            height={35}
             width={35}
             height={35}
             alt="LinkedIn"
@@ -110,7 +120,53 @@ const LinkedInNavbar: React.FC = () => {
         </div>
 
         <Navbar.Toggle aria-controls="main-navbar-collapse" />
+        <Navbar.Toggle aria-controls="main-navbar-collapse" />
 
+        <Navbar.Collapse id="main-navbar-collapse">
+          <div className="d-flex flex-column flex-md-row align-items-center justify-content-between w-100 mt-3 mt-md-0">
+            <Nav className="d-flex align-items-center justify-content-center flex-grow-1 gap-3 flex-wrap">
+              <div className="text-center small cursor-pointer mx-2">
+                <HouseDoorFill size={20} className="text-lk-tertiary" />
+                <div>Home</div>
+              </div>
+              <div className="text-center small cursor-pointer mx-2">
+                <PeopleFill size={20} className="text-lk-tertiary" />
+                <div>Rete</div>
+              </div>
+              <div className="text-center small cursor-pointer mx-2">
+                <BriefcaseFill size={20} className="text-lk-tertiary" />
+                <div>Lavoro</div>
+              </div>
+              <div className="text-center small cursor-pointer mx-2">
+                <ChatDotsFill size={20} className="text-lk-tertiary" />
+                <div>Messaggistica</div>
+              </div>
+              <div className="text-center small position-relative cursor-pointer mx-2">
+                <BellFill size={20} className="text-lk-tertiary" />
+                <div>Notifiche</div>
+              </div>
+
+              <Dropdown align="end">
+                <Dropdown.Toggle
+                  variant="link"
+                  className="p-0 d-flex flex-column align-items-center text-decoration-none text-dark"
+                >
+                  <Image
+                    src="https://placehold.co/32x32"
+                    roundedCircle
+                    width={23}
+                    height={23}
+                    alt="Tu"
+                  />
+                  <DropdownHeader>Tu</DropdownHeader>
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item>Profilo</Dropdown.Item>
+                  <Dropdown.Item>Impostazioni</Dropdown.Item>
+                  <Dropdown.Divider />
+                  <Dropdown.Item>Esci</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
         <Navbar.Collapse id="main-navbar-collapse">
           <div className="d-flex flex-column flex-md-row align-items-center justify-content-between w-100 mt-3 mt-md-0">
             <Nav className="d-flex align-items-center justify-content-center flex-grow-1 gap-3 flex-wrap">
@@ -179,5 +235,8 @@ const LinkedInNavbar: React.FC = () => {
     </Navbar>
   );
 };
+  );
+};
 
+export default LinkedInNavbar;
 export default LinkedInNavbar;
