@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import "./App.css"
 import Footer from "./components/Footer"
 import LinkedInNavbar from "./components/Navbar"
@@ -8,10 +9,17 @@ import Esperienza from "./components/EsperienzaComponents/Esperienza"
 import Formazione from "./components/EsperienzaComponents/Formazione"
 import Competenze from "./components/EsperienzaComponents/Competenze"
 import Interessi from "./components/EsperienzaComponents/Interessi"
+=======
+import "./App.css";
+import Consigliati from "./components/Consigliati";
+import Analisi from "./components/Analisi";
+import Attività from "./components/Attività";
+>>>>>>> Stashed changes
 
 function App() {
   return (
     <>
+<<<<<<< Updated upstream
       <div className=" sticky-top">
         <LinkedInNavbar />
       </div>
@@ -36,6 +44,13 @@ function App() {
       <Footer />
     </>
   )
+=======
+      <Consigliati />
+      <Analisi />
+      <Attività />
+    </>
+  );
+>>>>>>> Stashed changes
 }
 
 export default App
