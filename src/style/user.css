@@ -22,7 +22,7 @@
 }
 
 .otherButton:hover {
-  background-color: rgba(93, 214, 235, 0.286) !important;
+  background-color: rgba(125, 150, 154, 0.286) !important;
   border: 2px solid rgb(0, 0, 120) !important;
 }
 
@@ -32,6 +32,11 @@
   border: 2px solid black !important;
 }
 
-.pen:hover {
-  background-color: #f2f3f5;
+.Pen:hover {
+  background-color: rgb(232, 240, 240) !important;
+}
+
+a.epicode:hover {
+  color: #007bff !important;
+  text-decoration: underline !important;
 }
