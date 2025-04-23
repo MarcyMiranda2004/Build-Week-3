@@ -5,3 +5,7 @@
 .search:active {
   background-color: brown;
 }
+
+.cronologia:hover {
+  background-color: rgba(211, 211, 211, 0.286) !important;
+}
