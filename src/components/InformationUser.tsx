@@ -23,12 +23,13 @@ interface Profile {
 function InformationUser() {
   const [profile, setProfile] = useState<Profile | null>(null);
 
+
   useEffect(() => {
     const fetchProfile = async () => {
       try {
         const response = await fetch("https://striveschool-api.herokuapp.com/api/profile/me", {
           headers: {
-            Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODA3OGYwOWQ0NTE4MTAwMTVjZTgzZTMiLCJpYXQiOjE3NDUzMjU4MzMsImV4cCI6MTc0NjUzNTQzM30.uJOPPtgp8vvr1Y0R65E9hilZ2E0fEm22LZsvbmsnZPM",
+            Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODA5MDg1NTk1ODc4ZjAwMTVmNGEyMDMiLCJpYXQiOjE3NDU0MjI1ODcsImV4cCI6MTc0NjYzMjE4N30.k6Nzl-WhWrUFFmXcmni_PvvkzJn_8zyJj6zglCgY8uY",
           },
         });
         if (response.ok) {
