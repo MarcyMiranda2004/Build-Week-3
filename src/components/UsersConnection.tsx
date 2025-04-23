@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Card, Button, Spinner } from "react-bootstrap";
+import { Spinner, Card } from "react-bootstrap";
 import UserCard from "./UserCard";
 
 const API_URL = "https://striveschool-api.herokuapp.com/api/profile/";
@@ -14,7 +14,11 @@ interface ProfileSuggestion {
   image: string;
 }
 
-const UsersConnection = function () {
+const UsersConnection = function ({
+  onUserClick,
+}: {
+  onUserClick: (userId: string) => void;
+}) {
   const [suggestions, setSuggestions] = useState<ProfileSuggestion[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -61,14 +65,10 @@ const UsersConnection = function () {
               name={`${user.name} ${user.surname}`}
               title={user.title}
               avatarUrl={user.image}
+              onClick={() => onUserClick(user._id)}
             />
           ))
         )}
-        <div className="text-center mt-2">
-          <Button variant="light" size="sm" className="w-100 btn-rounded-sm">
-            Mostra tutto
-          </Button>
-        </div>
       </Card.Body>
     </Card>
   );

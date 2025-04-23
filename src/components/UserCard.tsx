@@ -4,11 +4,15 @@ interface UserCardProps {
   name: string;
   title: string;
   avatarUrl: string;
+  onClick?: () => void;
 }
 
-const UserCard = function ({ name, title, avatarUrl }: UserCardProps) {
+const UserCard = ({ name, title, avatarUrl, onClick }: UserCardProps) => {
   return (
-    <div className="d-flex align-items-start mb-2 border-bottom border-1 border-secondary">
+    <div
+      className="d-flex align-items-start mb-2 border-bottom border-1 border-secondary"
+      onClick={onClick}
+    >
       <Image
         src={avatarUrl}
         roundedCircle
@@ -22,8 +26,11 @@ const UserCard = function ({ name, title, avatarUrl }: UserCardProps) {
           variant="light"
           size="sm"
           className="mt-1 rounded-pill text-dark border border-2 border-dark mb-3"
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
         >
-          <i className="bi bi-person-fill-add me-1 "></i> Collegati
+          <i className="bi bi-person-fill-add me-1"></i> Collegati
         </Button>
       </div>
     </div>

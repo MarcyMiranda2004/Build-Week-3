@@ -1,12 +1,16 @@
-import { Card, Col } from "react-bootstrap"
-import UsersConnection from "./UsersConnection"
+import { useState } from "react";
+import { Card, Col } from "react-bootstrap";
+import UsersConnection from "./UsersConnection";
+import UserClicked from "./UserClicked";
 
 interface RightSidebarProps {
-  language: string
-  publicUrl: string
+  language: string;
+  publicUrl: string;
 }
 
 const RightSidebar = function ({ language, publicUrl }: RightSidebarProps) {
+  const [userId, setUserId] = useState<string | null>(null);
+
   return (
     <Col className="d-none d-md-block mt-3">
       <Card className="mb-3 shadow-sm">
@@ -34,9 +38,11 @@ const RightSidebar = function ({ language, publicUrl }: RightSidebarProps) {
         </Card.Body>
       </Card>
 
-      <UsersConnection />
-    </Col>
-  )
-}
+      <UsersConnection onUserClick={setUserId} />
 
-export default RightSidebar
+      {userId && <UserClicked userId={userId} />}
+    </Col>
+  );
+};
+
+export default RightSidebar;
