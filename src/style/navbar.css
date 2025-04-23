@@ -1,1 +1,7 @@
-@import url("../style/variable.scss");
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.search:active {
+  background-color: brown;
+}

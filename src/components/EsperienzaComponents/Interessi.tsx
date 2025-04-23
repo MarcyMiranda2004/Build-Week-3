@@ -1,10 +1,10 @@
-import { Button, Col, Container, Row } from "react-bootstrap"
-import Tab from "react-bootstrap/Tab"
-import Tabs from "react-bootstrap/Tabs"
+import { Button, Col, Container, Row } from "react-bootstrap";
+import Tab from "react-bootstrap/Tab";
+import Tabs from "react-bootstrap/Tabs";
 
 const Interessi = function () {
   return (
-    <Container className=" bg-white my-3 border rounded-3">
+    <Container className=" bg-white my-2 border rounded-3">
       <Row>
         <h4 className="ms-2 mt-3">Interessi</h4>
         <Tabs
@@ -112,7 +112,7 @@ const Interessi = function () {
         </Tabs>
       </Row>
     </Container>
-  )
-}
+  );
+};
 
-export default Interessi
+export default Interessi;
