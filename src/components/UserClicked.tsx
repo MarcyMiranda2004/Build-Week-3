@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Spinner, Button } from "react-bootstrap";
+import { Spinner, Button, Container } from "react-bootstrap";
 import { PencilFill } from "react-bootstrap-icons";
 
 const myAuthentication: string =
@@ -19,6 +19,7 @@ const UserClicked = ({ userId }: { userId: string }) => {
       .then((data) => {
         setUserData(data);
         setLoading(false);
+        console.log("Profilo?", data);
       })
       .catch((err) => {
         console.error("Errore durante la fetch dell'utente:", err);
@@ -34,7 +35,7 @@ const UserClicked = ({ userId }: { userId: string }) => {
   }
 
   return (
-    <div className="profile-container d-flex justify-content-center align-items-center vh-100">
+    <Container className="bg-white d-flex justify-content-center align-items-center rounded-3 border border-1 border-lk-light mt-2 p-0">
       <div className="profile-card shadow p-0 bg-white">
         <div className="header-section position-relative mb-3">
           <img
@@ -88,18 +89,21 @@ const UserClicked = ({ userId }: { userId: string }) => {
         </div>
 
         <div className="d-flex flex-wrap ms-3 gap-3 mt-2">
-          <button className="btn btn-primary bg-primary rounded-5 text-light">
+          <Button className="btn bg-lk-primary disponibile rounded-5 text-light">
             Disponibile per
-          </button>
-          <button className="btn btn-outline-primary border-1 rounded-5 border-primary">
+          </Button>
+
+          <Button className="btn btn-outline-lk-primary border-1 rounded-5 border-lk-primary otherButton bg-transparent text-lk-primary fw-semibold">
             Aggiungi sezione del profilo
-          </button>
-          <button className="btn btn-outline-secondary border-1 rounded-5 border-primary">
+          </Button>
+
+          <Button className="btn btn-outline-lk-secondary border-1 rounded-5 border-lk-primary otherButton bg-transparent text-lk-primary fw-semibold">
             Migliora profilo
-          </button>
-          <button className="btn btn-light border-1 border-black rounded-5">
+          </Button>
+
+          <Button className="btn btn-light border-1 border-black rounded-5 risorse bg-transparent">
             Risorse
-          </button>
+          </Button>
         </div>
 
         <div className="d-flex justify-content-between mt-4 gap-3 ms-2">
@@ -119,7 +123,7 @@ const UserClicked = ({ userId }: { userId: string }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 
