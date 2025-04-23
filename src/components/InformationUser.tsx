@@ -5,6 +5,10 @@ import "../style/user.css";
 import { Pencil, ShieldCheck } from "react-bootstrap-icons";
 import { Button, Container } from "react-bootstrap";
 
+const BARER_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODA5MjJmZTFmMzVjZjAwMTU1MTdhNDUiLCJpYXQiOjE3NDU0MjkyNDYsImV4cCI6MTc0NjYzODg0Nn0.PG5gltWSicJUVa4Fu_JY0I1X7JhyRSoe-LK2_c7FZYs"
+const URL ="https://striveschool-api.herokuapp.com/api/profile/me"
+
+
 interface Profile {
   name: string;
   surname: string;
@@ -27,9 +31,9 @@ function InformationUser() {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await fetch("https://striveschool-api.herokuapp.com/api/profile/me", {
+        const response = await fetch(URL, {
           headers: {
-            Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODA5MDg1NTk1ODc4ZjAwMTVmNGEyMDMiLCJpYXQiOjE3NDU0MjI1ODcsImV4cCI6MTc0NjYzMjE4N30.k6Nzl-WhWrUFFmXcmni_PvvkzJn_8zyJj6zglCgY8uY",
+            Authorization:  `Bearer ${BARER_TOKEN}`
           },
         });
         if (response.ok) {
@@ -82,7 +86,7 @@ function InformationUser() {
               EPICODE
             </a>
           </div>
-          <p className="ms-3 mb-1">Studente presso I.S Graziani</p>
+          <p className="ms-3 mb-1">Studenti presso Epicode</p>
           <a className=" epicode border-0 me-5 ms-3 mt-2 mb-2s d-flex text-decoration-none text-black align-items-center d-md-none">
             <img
               src="./public/epicode_logo.jpeg"
