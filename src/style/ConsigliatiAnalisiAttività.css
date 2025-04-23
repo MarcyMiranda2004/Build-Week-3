@@ -1,0 +1,32 @@
+.addRiepilogo {
+  width: 12rem;
+}
+
+.addRiepilogo:hover {
+  cursor: pointer;
+  color: black !important;
+  background-color: rgba(211, 211, 211, 0.286) !important;
+  border: 2px solid black !important;
+}
+
+.showAnalisi:hover {
+  cursor: pointer;
+  background-color: rgba(211, 211, 211, 0.286) !important;
+}
+
+.addPost:hover {
+  background-color: rgba(93, 214, 235, 0.286);
+  border: 2px solid rgb(0, 0, 120) !important;
+}
+
+.modalProfile:hover {
+  background-color: rgba(211, 211, 211, 0.286) !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.publicPost:hover {
+  background-color: rgb(53, 53, 148) !important;
+}

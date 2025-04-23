@@ -1,18 +1,20 @@
 $lk-primary: #0A66C2;
 $lk-secondary: #FFFFFF;
-$lk-tertiary: #404040;
+$lk-tertiary: #666666;
 $lk-body-bg: #F4F2EE;
+$lk-light-gray: #DFDEDA;
 
 $primary: $lk-primary;
 $secondary: $lk-secondary;
 $tertiary: $lk-tertiary;
 $body-bg: $lk-body-bg;
+$light-gray: #DFDEDA;
 
 $theme-colors: (
     "lk-primary": $lk-primary,
     "lk-secondary": $lk-secondary,
     "lk-tertiary": $lk-tertiary,
     "lk-background": $lk-body-bg,
-    "lk-light": #f8f9fa,
+    "lk-light": #DFDEDA,
     "lk-dark": #212529
 );
