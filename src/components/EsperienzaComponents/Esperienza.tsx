@@ -1,15 +1,45 @@
-import { Col, Container, Row, Button } from "react-bootstrap";
-import { useState } from "react";
-import EsperienzaModal from "./EsperienzaModal";
-import "bootstrap-icons/font/bootstrap-icons.css";
+import React, { useEffect, useState } from "react"
+import { Button, Card, Col, Form, Modal, Row } from "react-bootstrap"
 
-const Esperienza = () => {
-  const [show, setShow] = useState(false);
-  const [esperienze, setEsperienze] = useState<any[]>([]);
-  const [isEditMode, setIsEditMode] = useState(false);
-  const [editingIndex, setEditingIndex] = useState<number | null>(null);
+const userId = "68078f09d451810015ce83e3"
+const token =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODA3OGYwOWQ0NTE4MTAwMTVjZTgzZTMiLCJpYXQiOjE3NDUzMjU4MzMsImV4cCI6MTc0NjUzNTQzM30.uJOPPtgp8vvr1Y0R65E9hilZ2E0fEm22LZsvbmsnZPM"
+const baseUrl = `https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences`
 
-  const [formData, setFormData] = useState({
+const mesi = [
+  "Gennaio",
+  "Febbraio",
+  "Marzo",
+  "Aprile",
+  "Maggio",
+  "Giugno",
+  "Luglio",
+  "Agosto",
+  "Settembre",
+  "Ottobre",
+  "Novembre",
+  "Dicembre",
+]
+
+interface EsperienzaForm {
+  qualifica: string
+  tipoImpiego: string
+  azienda: string
+  localita: string
+  dataInizioMese: string
+  dataInizioAnno: string
+  dataFineMese: string
+  dataFineAnno: string
+  descrizione: string
+}
+
+export default function Esperienza() {
+  const [esperienze, setEsperienze] = useState<any[]>([])
+  const [show, setShow] = useState(false)
+  const [editingIndex, setEditingIndex] = useState<number | null>(null)
+  const [modificaAttiva, setModificaAttiva] = useState(false)
+
+  const [formData, setFormData] = useState<EsperienzaForm>({
     qualifica: "",
     tipoImpiego: "",
     azienda: "",
@@ -19,161 +49,315 @@ const Esperienza = () => {
     dataFineMese: "",
     dataFineAnno: "",
     descrizione: "",
-  });
+  })
 
-  const handleChange = (e: React.ChangeEvent<any>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+  const fetchEsperienze = async () => {
+    try {
+      const res = await fetch(baseUrl, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      if (!res.ok) throw new Error("Errore nel fetch delle esperienze")
+      const data = await res.json()
+      setEsperienze(data)
+    } catch (err) {
+      console.error(err)
+    }
+  }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (editingIndex !== null) {
-      // Modifica
-      const nuoveEsperienze = [...esperienze];
-      nuoveEsperienze[editingIndex] = formData;
-      setEsperienze(nuoveEsperienze);
-    } else {
-      // Aggiunta
-      setEsperienze((prev) => [...prev, formData]);
+  useEffect(() => {
+    fetchEsperienze()
+  }, [])
+
+  const handleClose = () => {
+    setShow(false)
+    setEditingIndex(null)
+    setFormData({
+      qualifica: "",
+      tipoImpiego: "",
+      azienda: "",
+      localita: "",
+      dataInizioMese: "",
+      dataInizioAnno: "",
+      dataFineMese: "",
+      dataFineAnno: "",
+      descrizione: "",
+    })
+  }
+
+  const handleShow = () => setShow(true)
+
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    const esperienza = {
+      role: formData.qualifica,
+      company: formData.azienda,
+      startDate: `${formData.dataInizioAnno}-${String(
+        mesi.indexOf(formData.dataInizioMese) + 1
+      ).padStart(2, "0")}-01`,
+      endDate:
+        formData.dataFineAnno && formData.dataFineMese
+          ? `${formData.dataFineAnno}-${String(
+              mesi.indexOf(formData.dataFineMese) + 1
+            ).padStart(2, "0")}-01`
+          : null,
+      description: formData.descrizione,
+      area: formData.localita,
     }
 
+    try {
+      let response
+      if (editingIndex !== null) {
+        const id = esperienze[editingIndex]._id
+        response = await fetch(`${baseUrl}/${id}`, {
+          method: "PUT",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(esperienza),
+        })
+      } else {
+        response = await fetch(baseUrl, {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(esperienza),
+        })
+      }
+
+      if (!response.ok) throw new Error("Errore nel salvataggio")
+
+      await fetchEsperienze()
+      handleClose()
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  const handleModifica = (index: number) => {
+    const exp = esperienze[index]
     setFormData({
-      qualifica: "",
+      qualifica: exp.role || "",
       tipoImpiego: "",
-      azienda: "",
-      localita: "",
-      dataInizioMese: "",
-      dataInizioAnno: "",
-      dataFineMese: "",
-      dataFineAnno: "",
-      descrizione: "",
-    });
+      azienda: exp.company || "",
+      localita: exp.area || "",
+      dataInizioMese: mesi[new Date(exp.startDate).getMonth()],
+      dataInizioAnno: new Date(exp.startDate).getFullYear().toString(),
+      dataFineMese: exp.endDate ? mesi[new Date(exp.endDate).getMonth()] : "",
+      dataFineAnno: exp.endDate
+        ? new Date(exp.endDate).getFullYear().toString()
+        : "",
+      descrizione: exp.description || "",
+    })
+    setEditingIndex(index)
+    setShow(true)
+  }
 
-    setEditingIndex(null);
-    setShow(false);
-  };
-
-  const handleEdit = (index: number) => {
-    setFormData(esperienze[index]);
-    setEditingIndex(index);
-    setShow(true);
-  };
-
-  const handleCloseModal = () => {
-    setShow(false);
-    setEditingIndex(null);
-    setFormData({
-      qualifica: "",
-      tipoImpiego: "",
-      azienda: "",
-      localita: "",
-      dataInizioMese: "",
-      dataInizioAnno: "",
-      dataFineMese: "",
-      dataFineAnno: "",
-      descrizione: "",
-    });
-  };
+  const handleElimina = async (index: number) => {
+    const id = esperienze[index]._id
+    try {
+      const res = await fetch(`${baseUrl}/${id}`, {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      if (!res.ok) throw new Error("Errore nell'eliminazione")
+      await fetchEsperienze()
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
   return (
-    <Container className="bg-white border rounded-3 my-2">
-      <Row className="align-items-center mb-3">
-        <Col>
-          <h4 className="ms-2 mt-3">Esperienza</h4>
-        </Col>
-        <Col xs="auto" className="d-flex align-items-center gap-2">
-          <Button variant="outline-black " onClick={() => setShow(true)}>
-            <span className="fs-5">+</span>
-          </Button>
-          <Button
-            variant={isEditMode ? "outline-secondary" : "outline-black"}
-            onClick={() => setIsEditMode((prev) => !prev)}
-          >
-            {isEditMode ? "Annulla" : <i className="bi bi-pencil"></i>}
-          </Button>
-        </Col>
-      </Row>
+    <Card className="mb-3">
+      <Card.Body>
+        <Card.Title className="d-flex justify-content-between align-items-center">
+          <h4 className="ms-2 ">Esperienza</h4>
+          <div>
+            <Button
+              variant="outline-black"
+              size="sm"
+              onClick={handleShow}
+              className="ms-2"
+            >
+              <span className="fs-5">+</span>
+            </Button>
+            <Button
+              variant="outline-black"
+              size="sm"
+              onClick={() => setModificaAttiva(!modificaAttiva)}
+            >
+              {modificaAttiva ? "Annulla" : <i className="bi bi-pencil"></i>}
+            </Button>
+          </div>
+        </Card.Title>
 
-      {esperienze.map((exp, idx) => (
-        <Row key={idx} className="mb-3">
-          <Col xs="1">
-            <img
-              className="w-100"
-              src="https://cdn-icons-png.flaticon.com/512/8136/8136031.png"
-              alt="placeholder"
-            />
-          </Col>
-          <Col xs="10">
-            <div className="d-flex justify-content-between">
-              <p className="fw-bold mb-0 fs-5">{exp.qualifica}</p>
-              {isEditMode && (
-                <Button
-                  variant="outline-secondary"
-                  size="sm"
-                  onClick={() => handleEdit(idx)}
-                >
-                  Modifica
-                </Button>
+        {esperienze.map((exp, index) => (
+          <Card key={index} className="my-2 border-0">
+            <Card.Body>
+              <Card.Title>
+                {" "}
+                <p className=" mb-0">{exp.role}</p>
+                <small>{exp.company}</small>
+              </Card.Title>
+              <Card.Subtitle className="mb-2 text-muted">
+                dal {exp.startDate?.slice(0, 7)} al
+                {exp.endDate?.slice(0, 7) || "Presente"}
+              </Card.Subtitle>
+              <Card.Text>{exp.description}</Card.Text>
+              <hr />
+              {modificaAttiva && (
+                <div className="d-flex gap-2">
+                  <Button
+                    variant="outline-primary"
+                    size="sm"
+                    onClick={() => handleModifica(index)}
+                  >
+                    Modifica
+                  </Button>
+                  <Button
+                    variant="outline-danger"
+                    size="sm"
+                    onClick={() => handleElimina(index)}
+                  >
+                    Elimina
+                  </Button>
+                </div>
               )}
-            </div>
-            <small>
-              {exp.azienda} · {exp.tipoImpiego}
-            </small>
-            <br />
-            <small className="text-black-50">
-              {exp.dataInizioMese} {exp.dataInizioAnno} – {exp.dataFineMese}{" "}
-              {exp.dataFineAnno}
-            </small>
-            <br />
-            <small className="text-black-50">
-              {exp.localita} {exp.localita && "· In sede"}
-            </small>
-            <p className="mt-3">{exp.descrizione}</p>
-            <p className="fw-bolder">
-              <i className="bi bi-gem me-2"></i>Problem solving, Formazione
-            </p>
-            <hr />
-          </Col>
-        </Row>
-      ))}
+            </Card.Body>
+          </Card>
+        ))}
+      </Card.Body>
 
-      {/* Esperienza fissa */}
-      <Row className="mb-3">
-        <Col xs="1">
-          <img
-            className="w-100"
-            src="https://yt3.googleusercontent.com/Jl_wJgbSzmfFqBXOVYTI-tdCDykgbzkhenHjSoigmZ5WGjDijWn5Y0aKTo6Z4HMSzOHvtu4p7g=s900-c-k-c0x00ffffff-no-rj"
-            alt="Epicode"
-          />
-        </Col>
-        <Col xs="10">
-          <p className="fw-bold mb-0 fs-5">Full stack Developer</p>
-          <small>Epicode</small>
-          <br />
-          <small className="text-black-50">mar 2054 – mag 2074</small>
-          <br />
-          <small className="text-black-50">Roma</small>
-          <p className="mt-3">
-            Sviluppatore Full Stack con esperienza nello sviluppo di
-            applicazioni moderne...
-          </p>
-          <p className="fw-bolder">
-            <i className="bi bi-gem me-2"></i>React, Angular, Vue.js, HTML5,
-            CSS3, JavaScript/TypeScript, Bootstrap, TailwindCSS
-          </p>
-        </Col>
-      </Row>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>
+            {editingIndex !== null
+              ? "Modifica esperienza"
+              : "Aggiungi esperienza"}
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group className="mb-3">
+              <Form.Label>Qualifica</Form.Label>
+              <Form.Control
+                type="text"
+                name="qualifica"
+                value={formData.qualifica}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
 
-      <EsperienzaModal
-        show={show}
-        onHide={handleCloseModal}
-        formData={formData}
-        onChange={handleChange}
-        onSubmit={handleSubmit}
-      />
-    </Container>
-  );
-};
+            <Form.Group className="mb-3">
+              <Form.Label>Azienda</Form.Label>
+              <Form.Control
+                type="text"
+                name="azienda"
+                value={formData.azienda}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
 
-export default Esperienza;
+            <Row>
+              <Col>
+                <Form.Group className="mb-3">
+                  <Form.Label>Mese inizio</Form.Label>
+                  <Form.Select
+                    name="dataInizioMese"
+                    value={formData.dataInizioMese}
+                    onChange={handleChange}
+                    required
+                  >
+                    <option value="">Seleziona</option>
+                    {mesi.map((mese, i) => (
+                      <option key={i}>{mese}</option>
+                    ))}
+                  </Form.Select>
+                </Form.Group>
+              </Col>
+              <Col>
+                <Form.Group className="mb-3">
+                  <Form.Label>Anno inizio</Form.Label>
+                  <Form.Control
+                    type="number"
+                    name="dataInizioAnno"
+                    value={formData.dataInizioAnno}
+                    onChange={handleChange}
+                    required
+                  />
+                </Form.Group>
+              </Col>
+            </Row>
+
+            <Row>
+              <Col>
+                <Form.Group className="mb-3">
+                  <Form.Label>Mese fine</Form.Label>
+                  <Form.Select
+                    name="dataFineMese"
+                    value={formData.dataFineMese}
+                    onChange={handleChange}
+                  >
+                    <option value="">Seleziona</option>
+                    {mesi.map((mese, i) => (
+                      <option key={i}>{mese}</option>
+                    ))}
+                  </Form.Select>
+                </Form.Group>
+              </Col>
+              <Col>
+                <Form.Group className="mb-3">
+                  <Form.Label>Anno fine</Form.Label>
+                  <Form.Control
+                    type="number"
+                    name="dataFineAnno"
+                    value={formData.dataFineAnno}
+                    onChange={handleChange}
+                  />
+                </Form.Group>
+              </Col>
+            </Row>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Località</Form.Label>
+              <Form.Control
+                type="text"
+                name="localita"
+                value={formData.localita}
+                onChange={handleChange}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Descrizione</Form.Label>
+              <Form.Control
+                as="textarea"
+                name="descrizione"
+                value={formData.descrizione}
+                onChange={handleChange}
+              />
+            </Form.Group>
+
+            <Button variant="primary" type="submit">
+              {editingIndex !== null ? "Salva modifiche" : "Aggiungi"}
+            </Button>
+          </Form>
+        </Modal.Body>
+      </Modal>
+    </Card>
+  )
+}
