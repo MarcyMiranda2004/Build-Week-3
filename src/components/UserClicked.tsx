@@ -19,6 +19,7 @@ const UserClicked = ({ userId }: { userId: string }) => {
       .then((data) => {
         setUserData(data);
         setLoading(false);
+        console.log("Profilo?", data);
       })
       .catch((err) => {
         console.error("Errore durante la fetch dell'utente:", err);
