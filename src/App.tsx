@@ -38,6 +38,11 @@ function App() {
             </Col>
             <Col xs={3} className="d-none d-md-block">
               <RightSidebar onUserClick={setUserId} />
+            <Col xs={3} className="d-none d-lg-block">
+              <RightSidebar
+                language="Italiano"
+                publicUrl="https://linkedin.com/in/Marcello Miranda"
+              />
             </Col>
           </Row>
         </Container>
