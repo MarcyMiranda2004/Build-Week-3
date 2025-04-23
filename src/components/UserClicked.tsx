@@ -75,7 +75,7 @@ const UserClicked = ({ userId }: { userId: string }) => {
             <h2 className="ms-3 mb-0 name mt-0">
               {userData.name} {userData.surname}
             </h2>
-            <Button className="border-0 mt-3 me-5  d-flex d-none d-md-flex text-decoration-none text-black fw-semibold bg-light">
+            <a className="epicode first border-0 mt-3 me-5  d-flex d-none d-md-flex text-decoration-none text-black fw-semibold">
               <img
                 src="./public/epicode_logo.jpeg"
                 alt="Epicode Logo"
@@ -83,7 +83,7 @@ const UserClicked = ({ userId }: { userId: string }) => {
                 style={{ width: "20px", height: "20px" }}
               />
               EPICODE
-            </Button>
+            </a>
           </div>
           <p className="ms-3 mb-1">{userData.title}</p>
           <p className="ms-3 mb-1 country">
