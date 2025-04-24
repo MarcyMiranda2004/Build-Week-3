@@ -33,7 +33,7 @@ const RightSidebar = () => {
                 <i className="bi bi-pencil"></i>
               </div>
               <div>
-                <p>https://linkedin.com/in/marcello-miranda</p>
+                <p>https://linkedin.com/in/Team6forEpicode</p>
               </div>
             </div>
           </div>
