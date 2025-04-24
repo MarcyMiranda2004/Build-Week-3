@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
+  Button,
   Navbar,
   Nav,
   Form,
@@ -26,9 +27,13 @@ const LinkedInNavbar: React.FC = () => {
   const [searchFocused, setSearchFocused] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [recentSearches, setRecentSearches] = useState<string[]>([]);
+  const [showStickyProfile, setShowStickyProfile] = useState(false);
+
 
   const handleScroll = () => {
-    setIsScrolled(window.scrollY > 1);
+    const y = window.scrollY
+    setIsScrolled(y > 1);
+    setShowStickyProfile(y > 50)
   };
 
   useEffect(() => {
@@ -55,6 +60,7 @@ const LinkedInNavbar: React.FC = () => {
   };
 
   return (
+    <>
     <Navbar
       bg="white"
       expand="md"
@@ -63,6 +69,7 @@ const LinkedInNavbar: React.FC = () => {
       } p-0 py-sm-2 pt-lg-0`}
       sticky="top"
     >
+
       <Container className="d-flex">
         <div className="d-flex gap-2 position-relative">
           <Image
@@ -180,6 +187,38 @@ const LinkedInNavbar: React.FC = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+      {showStickyProfile && (
+    <div className="sticky-top bg-white border-bottom shadow-sm py-2 px-3 d-flex align-items-center justify-content-between">
+    <div className="d-flex align-items-center gap-2">
+    <Image
+      src="https://placehold.co/40x40"
+      roundedCircle
+      alt="Profile"
+      width={40}
+      height={40}
+    />
+    <div>
+      <div className="fw-bold">Team6 for Epicode</div>
+      <div className="text-muted small">ID: 123456</div>
+    </div>
+    </div>
+    <div className="d-flex gap-2">
+    <Button className="btn bg-lk-primary disponibile rounded-5 text-light">
+            Disponibile per
+          </Button>
+          <Button className="btn btn-outline-lk-primary border-1 rounded-5 border-lk-primary otherButton bg-transparent text-lk-primary fw-semibold">
+            Aggiungi sezione del profilo
+          </Button>
+          <Button className="btn btn-outline-lk-secondary border-1 rounded-5 border-lk-primary otherButton bg-transparent text-lk-primary fw-semibold">
+            Migliora profilo
+          </Button>
+          <Button className="btn btn-light border-1 border-black rounded-5 risorse bg-transparent">
+            Risorse
+          </Button>
+    </div>
+    </div>
+    )}
+    </>
   );
 };
 
