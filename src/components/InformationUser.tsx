@@ -90,7 +90,7 @@ const InformationUser = () => {
             <img
               src={profile.image}
               alt="Profile"
-              className="profile-img rounded-circle border border-4 border-white"
+              className="profile-img rounded-circle border border-4 border-white cursor-pointer"
               onClick={handleOpenModal}
             />
           </div>

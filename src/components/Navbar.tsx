@@ -21,7 +21,7 @@ import {
   Search,
 } from "react-bootstrap-icons";
 import "../style/navbar.css";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "../style/user.css";
 
 const LinkedInNavbar: React.FC = () => {
@@ -51,13 +51,19 @@ const LinkedInNavbar: React.FC = () => {
     localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
   }, [recentSearches]);
 
+  const navigate = useNavigate();
+
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!searchTerm.trim()) return;
-    if (!recentSearches.includes(searchTerm)) {
-      setRecentSearches((prev) => [searchTerm, ...prev.slice(0, 4)]);
+    const trimmed = searchTerm.trim();
+    if (!trimmed) return;
+
+    if (!recentSearches.includes(trimmed)) {
+      setRecentSearches((prev) => [trimmed, ...prev.slice(0, 4)]);
     }
+
     setSearchTerm("");
+    navigate(`/jobs?search=${encodeURIComponent(trimmed)}`);
   };
 
   const location = useLocation();

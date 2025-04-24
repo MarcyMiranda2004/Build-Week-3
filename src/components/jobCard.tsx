@@ -19,7 +19,7 @@ const JobCard: React.FC<JobCardProps> = ({ job }) => {
           <br />
           <strong>Località:</strong> {job.candidate_required_location}
           <br />
-          <strong>Data Pubblicazione:</strong>
+          <strong>Data Pubblicazione: </strong>
           {new Date(job.publication_date).toLocaleDateString()}
         </Card.Text>
         <Button variant="primary" href={job.url} target="_blank">
