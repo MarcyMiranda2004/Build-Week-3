@@ -12,42 +12,51 @@ import Consigliati from "./components/Consigliati";
 import Analisi from "./components/Analisi";
 import Attività from "./components/Attività";
 import InformationUser from "./components/InformationUser";
-
+import Jobs from "./components/Jobs";
 import UserClicked from "./components/UserClicked";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
-    <>
-      <BrowserRouter>
-        <div className="sticky-top">
-          <LinkedInNavbar />
-        </div>
-        <main>
-          <Container>
-            <Row className="justify-content-center">
-              <Col xs={12} md={9}>
-                <Routes>
-                  <Route path="/" element={<InformationUser />} />
-                  <Route path="/profile/:userId" element={<UserClicked />} />
-                </Routes>
-                <Consigliati />
-                <Analisi />
-                <Attività />
-                <Esperienza />
-                <Formazione />
-                <Competenze />
-                <Interessi />
-              </Col>
-              <Col xs={3} className="d-none d-md-block">
-                <RightSidebar />
-              </Col>
-            </Row>
-          </Container>
-        </main>
-        <Footer />
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <div className="sticky-top">
+        <LinkedInNavbar />
+      </div>
+      <main>
+        <Routes>
+          <Route path="/jobs" element={<Jobs />} />
+          <Route
+            path="/*"
+            element={
+              <Container>
+                <Row className="justify-content-center">
+                  <Col xs={12} md={9}>
+                    <Routes>
+                      <Route path="/" element={<InformationUser />} />
+                      <Route
+                        path="/profile/:userId"
+                        element={<UserClicked />}
+                      />
+                    </Routes>
+                    <Consigliati />
+                    <Analisi />
+                    <Attività />
+                    <Esperienza />
+                    <Formazione />
+                    <Competenze />
+                    <Interessi />
+                  </Col>
+                  <Col xs={3} className="d-none d-md-block">
+                    <RightSidebar />
+                  </Col>
+                </Row>
+              </Container>
+            }
+          />
+        </Routes>
+      </main>
+      <Footer />
+    </BrowserRouter>
   );
 };
 
