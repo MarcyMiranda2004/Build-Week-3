@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Container, Button, Spinner } from "react-bootstrap";
-import { Pencil, ShieldCheck, X } from "react-bootstrap-icons";
+import { ShieldCheck } from "react-bootstrap-icons";
 import "../style/user.css";
 
 const myAuthentication =
@@ -48,9 +48,7 @@ const UserClicked = () => {
             alt="Cover"
           />
           <div className="d-flex justify-content-end">
-            <Button className="d-flex mt-3 justify-content-end me-3 fs-5 rounded-circle border-0 Pen bg-transparent">
-              <X size={20} className="text-danger" />
-            </Button>
+            <Button className="d-flex mt-3 justify-content-end me-3 fs-5 rounded-circle border-0 Pen bg-transparent"></Button>
           </div>
           <div className="profile-img-wrapper position-absolute">
             <img
@@ -102,14 +100,14 @@ const UserClicked = () => {
         <div className="d-flex justify-content-between mt-4 gap-3 ms-2">
           <div className="alert alert-light border w-100 p-2">
             <p className="mb-1">
-              Fai sapere che stai facendo selezione e attrai candidati
-              qualificati.
+              <strong>Fai sapere che stai facendo selezione</strong> e attrai
+              candidati qualificati.
             </p>
             <a href="#">Inizia</a>
           </div>
           <div className="alert alert-light border w-100 p-2 me-2">
             <p className="mb-1">
-              Metti in <strong>risalto i tuoi servizi</strong> in un'apposita
+              <strong>Metti in risalto i tuoi servizi</strong> in un'apposita
               sezione sul tuo profilo.
             </p>
             <a href="#">Inizia</a>
