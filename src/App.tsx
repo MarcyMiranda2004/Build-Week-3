@@ -12,7 +12,6 @@ import Consigliati from "./components/Consigliati";
 import Analisi from "./components/Analisi";
 import Attività from "./components/Attività";
 import InformationUser from "./components/InformationUser";
-import { useState } from "react";
 import UserClicked from "./components/UserClicked";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
