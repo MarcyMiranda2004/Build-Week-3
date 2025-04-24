@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Spinner, Card } from "react-bootstrap";
+import { Spinner, Card, Button } from "react-bootstrap";
 import UserCard from "./UserCard";
 
 const API_URL = "https://striveschool-api.herokuapp.com/api/profile/";
@@ -69,6 +69,14 @@ const UsersConnection = function ({
             />
           ))
         )}
+        <div className="d-flex justify-content-center mt-2">
+          <Button
+            variant="light"
+            className="border-0 text-secondary fw-semibold px-3 py-1 rounded-pill"
+          >
+            Mostra tutto
+          </Button>
+        </div>
       </Card.Body>
     </Card>
   );
