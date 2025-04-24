@@ -151,7 +151,7 @@ const LinkedInNavbar: React.FC = () => {
                   className="p-0 d-flex flex-column align-items-center text-decoration-none text-dark"
                 >
                   <Image
-                    src="https://placehold.co/32x32"
+                    src="./public/IMG2.JPG"
                     roundedCircle
                     width={23}
                     height={23}
