@@ -2,3 +2,13 @@
   padding: 10px; /* Riduci l'imbottitura */
   background-color: #222; /* Puoi cambiare il colore */
 }
+/* Nascondere la freccia */
+#dropdown-custom-1::after {
+  display: none;
+}
+
+/* Per far sì che il testo non esca dal menu */
+.text-start {
+  word-wrap: break-word;
+  white-space: normal;
+}

@@ -33,7 +33,7 @@ const LinkedInNavbar: React.FC = () => {
   const handleScroll = () => {
     const y = window.scrollY
     setIsScrolled(y > 1);
-    setShowStickyProfile(y > 50)
+    setShowStickyProfile(y > 300)
   };
 
   useEffect(() => {
