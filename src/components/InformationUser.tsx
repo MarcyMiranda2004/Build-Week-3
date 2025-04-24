@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 
 import { Pencil, ShieldCheck } from "react-bootstrap-icons";
 import { Button, Container, Dropdown, ButtonGroup ,Spinner } from "react-bootstrap";
-import ModalUser from "../components/ModalUser";
+
+import SwitchImage from "./SwitchImage";
 
 const BARER_TOKEN =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODA5MjJmZTFmMzVjZjAwMTU1MTdhNDUiLCJpYXQiOjE3NDU0MjkyNDYsImV4cCI6MTc0NjYzODg0Nn0.PG5gltWSicJUVa4Fu_JY0I1X7JhyRSoe-LK2_c7FZYs";
