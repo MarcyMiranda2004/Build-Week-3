@@ -14,37 +14,41 @@ import Attività from "./components/Attività";
 import InformationUser from "./components/InformationUser";
 import { useState } from "react";
 import UserClicked from "./components/UserClicked";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-function App() {
-  const [userId, setUserId] = useState<string | null>(null);
+const App = () => {
   return (
     <>
-      <div className="sticky-top">
-        <LinkedInNavbar />
-      </div>
-      <main>
-        <Container>
-          <Row className="justify-content-center">
-            <Col xs={12} md={9}>
-              <InformationUser />
-              <Consigliati />
-              <Analisi />
-              <Attività />
-              <Esperienza />
-              <Formazione />
-              <Competenze />
-              <Interessi />
-              {userId && <UserClicked userId={userId} />}
-            </Col>
-            <Col xs={3} className="d-none d-md-block">
-              <RightSidebar onUserClick={setUserId} />
-            </Col>
-          </Row>
-        </Container>
-      </main>
-      <Footer />
+      <BrowserRouter>
+        <div className="sticky-top">
+          <LinkedInNavbar />
+        </div>
+        <main>
+          <Container>
+            <Row className="justify-content-center">
+              <Col xs={12} md={9}>
+                <Routes>
+                  <Route path="/" element={<InformationUser />} />
+                  <Route path="/profile/:userId" element={<UserClicked />} />
+                </Routes>
+                <Consigliati />
+                <Analisi />
+                <Attività />
+                <Esperienza />
+                <Formazione />
+                <Competenze />
+                <Interessi />
+              </Col>
+              <Col xs={3} className="d-none d-md-block">
+                <RightSidebar />
+              </Col>
+            </Row>
+          </Container>
+        </main>
+        <Footer />
+      </BrowserRouter>
     </>
   );
-}
+};
 
 export default App;

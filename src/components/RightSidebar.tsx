@@ -1,11 +1,17 @@
 import { Card, Col } from "react-bootstrap";
 import UsersConnection from "./UsersConnection";
+import { useNavigate } from "react-router-dom";
 
-const RightSidebar = function ({
-  onUserClick,
-}: {
+interface RightSidebarProps {
   onUserClick: (userId: string) => void;
-}) {
+}
+
+const RightSidebar = () => {
+  const navigate = useNavigate();
+
+  const handleUserClick = (userId: string) => {
+    navigate(`/profile/${userId}`);
+  };
   return (
     <Col className="d-none d-md-block mt-3">
       <Card className="mb-3 shadow-sm">
@@ -34,7 +40,7 @@ const RightSidebar = function ({
         </Card.Body>
       </Card>
 
-      <UsersConnection onUserClick={onUserClick} />
+      <UsersConnection onUserClick={handleUserClick} />
     </Col>
   );
 };
