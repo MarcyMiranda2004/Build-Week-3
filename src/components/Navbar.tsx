@@ -22,6 +22,7 @@ import {
 } from "react-bootstrap-icons";
 import "../style/navbar.css";
 import { Link, useLocation } from "react-router-dom";
+import "../style/user.css";
 
 const LinkedInNavbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -127,34 +128,56 @@ const LinkedInNavbar: React.FC = () => {
                 <Link
                   to="/"
                   className={`text-center small mx-2 text-decoration-none text-dark pb-1 ${
-                    isActive("/") ? "border-bottom border-lk-primary" : ""
+                    isActive("/") ? "border-bottom border-3 border-primary" : ""
                   }`}
                 >
                   <HouseDoorFill size={20} className="text-lk-tertiary" />
                   <div>Home</div>
                 </Link>
-                <Link to="#" className="text-center small mx-2">
+
+                <Link
+                  to="/rete"
+                  className={`text-center small mx-2 text-decoration-none text-dark pb-1 ${
+                    isActive("/rete")
+                      ? "border-bottom border-3 border-primary"
+                      : ""
+                  }`}
+                >
                   <PeopleFill size={20} className="text-lk-tertiary" />
                   <div>Rete</div>
                 </Link>
+
                 <Link
                   to="/jobs"
                   className={`text-center small mx-2 text-decoration-none text-dark pb-1 ${
                     isActive("/jobs")
-                      ? "border-bottom border-3 border-lk-primary"
+                      ? "border-bottom border-3 border-primary"
                       : ""
                   }`}
                 >
                   <BriefcaseFill size={20} className="text-lk-tertiary" />
                   <div>Lavoro</div>
                 </Link>
-                <Link to="#" className="text-center small mx-2">
+
+                <Link
+                  to="/messaggi"
+                  className={`text-center small mx-2 text-decoration-none text-dark pb-1 ${
+                    isActive("/messaggi")
+                      ? "border-bottom border-3 border-lk-primary"
+                      : ""
+                  }`}
+                >
                   <ChatDotsFill size={20} className="text-lk-tertiary" />
                   <div>Messaggistica</div>
                 </Link>
+
                 <Link
-                  to="#"
-                  className="text-center small position-relative mx-2"
+                  to="/notifiche"
+                  className={`text-center small mx-2 text-decoration-none text-dark pb-1 ${
+                    isActive("/notifiche")
+                      ? "border-bottom border-3 border-primary"
+                      : ""
+                  }`}
                 >
                   <BellFill size={20} className="text-lk-tertiary" />
                   <div>Notifiche</div>
@@ -222,10 +245,10 @@ const LinkedInNavbar: React.FC = () => {
             <Button className="btn bg-lk-primary disponibile rounded-5 text-light">
               Disponibile per
             </Button>
-            <Button className="btn btn-outline-lk-primary rounded-5 text-lk-primary fw-semibold">
+            <Button className="btn btn-outline-lk-primary rounded-5 text-lk-primary fw-semibold bg-transparent otherButton">
               Aggiungi sezione del profilo
             </Button>
-            <Button className="btn btn-outline-lk-secondary rounded-5 text-lk-primary fw-semibold">
+            <Button className="btn btn-outline-lk-secondary rounded-5 text-lk-primary fw-semibold bg-transparent otherButton">
               Migliora profilo
             </Button>
             <Button className="btn btn-light rounded-5 border-black">
