@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react";
 
 import { Pencil, ShieldCheck } from "react-bootstrap-icons";
-import { Button, Container, Dropdown, ButtonGroup ,Spinner } from "react-bootstrap";
-
+import {
+  Button,
+  Container,
+  Dropdown,
+  ButtonGroup,
+  Spinner,
+} from "react-bootstrap";
 import SwitchImage from "./SwitchImage";
 
 const BARER_TOKEN =
@@ -116,35 +121,35 @@ const InformationUser = () => {
             </a>
           </p>
         </div>
-        
+
         <div className="d-flex flex-wrap ms-3 gap-3 mt-2">
-  <Dropdown as={ButtonGroup} className="disponibile-dropdown">
-    <Dropdown.Toggle
-      className="btn bg-lk-primary disponibile rounded-5 text-light"
-      id="dropdown-custom-1"
-      style={{ border: 'none', paddingRight: '20px' }}
-    >
-      Disponibile per
-    </Dropdown.Toggle>
+          <Dropdown as={ButtonGroup} className="disponibile-dropdown">
+            <Dropdown.Toggle
+              className="btn bg-lk-primary disponibile rounded-5 text-light"
+              id="dropdown-custom-1"
+              style={{ border: "none", paddingRight: "20px" }}
+            >
+              Disponibile per
+            </Dropdown.Toggle>
 
-    <Dropdown.Menu className="shadow p-2" style={{ width: "300px" }}>
-      <Dropdown.Item as="button" className="text-start">
-        <div className="fw-bold">Selezione del personale</div>
-        <small className="text-muted">
-          Fai sapere che stai facendo selezione e attrai candidati qualificati.
-        </small>
-      </Dropdown.Item>
-      <Dropdown.Divider />
-      <Dropdown.Item as="button" className="text-start">
-        <div className="fw-bold">Servizi offerti</div>
-        <small className="text-muted">
-          Metti in risalto i servizi che offri, così i nuovi clienti potranno trovarti.
-        </small>
-      </Dropdown.Item>
-    </Dropdown.Menu>
-  </Dropdown>
-
-
+            <Dropdown.Menu className="shadow p-2" style={{ width: "300px" }}>
+              <Dropdown.Item as="button" className="text-start">
+                <div className="fw-bold">Selezione del personale</div>
+                <small className="text-muted">
+                  Fai sapere che stai facendo selezione e attrai candidati
+                  qualificati.
+                </small>
+              </Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item as="button" className="text-start">
+                <div className="fw-bold">Servizi offerti</div>
+                <small className="text-muted">
+                  Metti in risalto i servizi che offri, così i nuovi clienti
+                  potranno trovarti.
+                </small>
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
 
           <Button className="btn btn-outline-lk-primary border-1 rounded-5 border-lk-primary otherButton bg-transparent text-lk-primary fw-semibold">
             Aggiungi sezione del profilo
